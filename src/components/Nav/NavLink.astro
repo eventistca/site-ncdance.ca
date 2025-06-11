@@ -1,5 +1,6 @@
 ---
 import { type navLinkItem } from '@config/navData.json';
+import { Icon } from 'astro-icon/components';
 
 interface Props {
   navItem: navLinkItem;
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const { navItem, class: className } = Astro.props as Props;
-const { text, link, newTab = false } = navItem;
+const { text, link, newTab = false, icon } = navItem;
 
 // if the current page is the same as the link, we can change the styling
 ---
@@ -25,6 +26,7 @@ const { text, link, newTab = false } = navItem;
     target={newTab ? '_blank' : ''}
     rel={newTab ? 'noopener noreferrer' : ''}
   >
+    {icon && <Icon name={icon} class="size-6 pt-1 mr-2" />}
     {text}
   </a>
 </li>

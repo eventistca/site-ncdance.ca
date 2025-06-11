@@ -43,6 +43,18 @@ import { Icon } from 'astro-icon/components';
       <nav>
         <ul class="mx-1 mt-2 text-xl">
           {
+            siteData.socials.instagram && (
+              <NavLink
+                navItem={{
+                  text: 'Instagram',
+                  link: siteData.socials.instagram,
+                  newTab: true,
+                  icon: 'socials/basil-instagram-solid',
+                }}
+              />
+            )
+          }
+          {
             // if dropdown exists, setup the dropdown, otherwise it is just a link
             navData.nav.map((navItem) =>
               'dropdown' in navItem ?

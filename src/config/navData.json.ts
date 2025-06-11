@@ -3,6 +3,7 @@ import data from './navData.json';
 export interface navLinkItem {
   text: string;
   link: string;
+  icon?: string;
   newTab?: boolean; // adds target="_blank" rel="noopener noreferrer" to link
 }
 
