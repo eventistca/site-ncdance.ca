@@ -2,26 +2,26 @@
   "name": "NC Dance",
   "title": "NC Dance",
   "description": "NC Dance is a dance studio in Kitchener, Ontario.",
-  "useViewTransitions": true,
   "author": {
     "name": "NC Dance",
     "email": "TODO: Natalie@gmail.com"
-  },
-  "contact": {
-    "name": "Natalie",
-    "email": "TODO: Natalie@gmail.com",
-    "phone": "TODO: 403-710-5364",
-    "image": "/images/natalie-logo.svg"
   },
   "defaultImage": {
     "src": "/images/natalie-logo.svg",
     "alt": "NC Dance logo"
   },
   "registerLink": "https://eventist.ca/ncdance",
+  "contact": {
+    "name": "Natalie",
+    "email": "TODO: Natalie@gmail.com",
+    "phone": "TODO: 403-710-5364",
+    "image": "/images/natalie-logo.svg"
+  },
   "socials": {
-    "facebook": "https://www.facebook.com/NC-Dance-100094946241050",
-    "twitter": "https://x.com/NC_Dance",
+    "facebook": "",
+    "twitter": "",
     "instagram": "https://www.instagram.com/ncdance.ca/",
-    "youtube": "https://www.youtube.com/@ncdance"
-  }
+    "youtube": ""
+  },
+  "useViewTransitions": true
 }
