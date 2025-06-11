@@ -1,0 +1,26 @@
+---
+import { render } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+const classInfo = await getEntry('staticSections', 'class-info');
+
+if (!classInfo) {
+  throw new Error('Class info not found');
+}
+
+const { Content } = await render(classInfo);
+---
+
+<section
+  id="class-info"
+  class="mx-auto max-w-md scroll-mt-10 px-4 py-24 md:max-w-6xl md:py-36"
+>
+  <h2 class="h2 md:px-12 lg:text-6xl">
+    {classInfo.data.title ?? 'Class Info'}
+  </h2>
+  <div
+    class="text-base-content markdown-content mt-8 max-w-none text-sm md:mt-12 md:px-8 md:text-base"
+  >
+    <Content />
+  </div>
+</section>

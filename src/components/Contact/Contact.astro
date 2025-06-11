@@ -1,0 +1,57 @@
+---
+/**
+ * * Contact section for the website
+ */
+import ContactForm from '@components/Forms/ContactForm.astro';
+import siteData from '@config/siteData.json';
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+const contact = await getEntry('staticSections', 'contact');
+
+if (!contact) {
+  throw new Error('Contact not found');
+}
+---
+
+<section
+  id="contact"
+  class="mx-auto max-w-md scroll-mt-10 px-4 py-24 md:max-w-6xl md:py-36"
+>
+  <h2 class="h2 md:px-12 lg:text-6xl">Contact Us</h2>
+  <div class="grid gap-y-10">
+    <div class="pt-8 md:pr-20 md:pl-12">
+      <!-- <p class="description mb-2">
+        Make sure to check out our <a
+          href="http://mambopro.com/frequently-asked-questions/"
+          >Frequently Asked Questions</a
+        > page for answers to the most common questions people have.
+      </p> -->
+      <p class="description">
+        <strong>{siteData.name}</strong><br />
+        Contact {siteData.contact.name}:<br />
+        <a href={`mailto:${siteData.contact.email}`}>{siteData.contact.email}</a
+        ><br />
+        <a href={`tel:${siteData.contact.phone}`}>{siteData.contact.phone}</a>
+      </p>
+
+      {
+        contact.data.image && (
+          <div class="mx-auto mt-8 aspect-square overflow-hidden">
+            <Image
+              src={contact.data.image}
+              alt="contact image"
+              width={450}
+              densities={[1.5, 2]}
+              class="h-full w-full object-cover"
+            />
+          </div>
+        )
+      }
+    </div>
+    <!-- <div class="md:pr-12 md:pl-20">
+      <ContactForm />
+    </div> -->
+  </div>
+</section>

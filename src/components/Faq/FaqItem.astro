@@ -1,0 +1,28 @@
+---
+import { type CollectionEntry, render } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  question: CollectionEntry<'frequentlyAskedQuestions'>;
+}
+
+const { question } = Astro.props as Props;
+const { question: questionText, order, draft } = question.data;
+const { Content } = await render(question);
+---
+
+<details class="group">
+  <summary class="flex cursor-pointer items-center justify-between"
+    >{questionText}
+    <Icon
+      name="tabler:chevron-down"
+      aria-hidden="true"
+      class="size-6 shrink-0 transition-transform group-open:rotate-180"
+    /></summary
+  >
+  <div
+    class="text-base-content markdown-content max-w-none text-sm md:text-base"
+  >
+    <Content />
+  </div>
+</details>

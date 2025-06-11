@@ -1,0 +1,12 @@
+{
+  "nav": [
+    {
+      "text": "About Us",
+      "link": "#about"
+    },
+    {
+      "text": "Contact",
+      "link": "#contact"
+    }
+  ]
+}
