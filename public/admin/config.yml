@@ -125,6 +125,7 @@ collections:
           - label: 'Image'
             name: image
             widget: image
+            required: false
       - name: about
         label: 'About'
         file: src/data/staticSections/about.mdx
