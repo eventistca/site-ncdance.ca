@@ -78,6 +78,26 @@ collections:
               - label: 'Phone'
                 name: phone
                 widget: string
+          - label: 'Socials'
+            name: socials
+            widget: object
+            fields:
+              - label: 'Facebook'
+                name: facebook
+                widget: string
+                required: false
+              - label: 'Twitter'
+                name: twitter
+                widget: string
+                required: false
+              - label: 'Instagram'
+                name: instagram
+                widget: string
+                required: false
+              - label: 'Youtube'
+                name: youtube
+                widget: string
+                required: false
       - name: hero
         label: 'Hero'
         file: src/data/staticSections/hero.mdx
